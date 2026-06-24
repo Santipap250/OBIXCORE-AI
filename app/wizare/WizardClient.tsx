@@ -209,6 +209,12 @@ export default function WizardClient() {
               : input.style === "cinematic" ? "bg-blue-muted text-blue-DEFAULT"
               : "bg-purple-muted text-purple-DEFAULT"
             }`}>{input.style}</span>
+            <span className="ml-auto flex items-center gap-1.5">
+              <span className={`h-2 w-2 rounded-full ${result.confidence >= 85 ? "bg-green-DEFAULT" : result.confidence >= 70 ? "bg-amber-DEFAULT" : "bg-red-DEFAULT"}`} />
+              <span className={`text-[10px] font-mono ${result.confidence >= 85 ? "text-green-DEFAULT" : result.confidence >= 70 ? "text-amber-DEFAULT" : "text-red-DEFAULT"}`}>
+                Confidence {result.confidence}%
+              </span>
+            </span>
           </div>
 
           {/* Warnings */}
